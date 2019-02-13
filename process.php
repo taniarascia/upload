@@ -13,7 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		$file_tmp = $_FILES['files']['tmp_name'][$i];
 		$file_type = $_FILES['files']['type'][$i];
 		$file_size = $_FILES['files']['size'][$i];
-		$file_ext = strtolower(end(explode('.', $_FILES['files']['name'][$i])));
+		$tmp = explode('.', $_FILES['files']['name'][$i]);
+		$file_ext = strtolower(end($tmp));
 
 		$file = $path . $file_name;
 
