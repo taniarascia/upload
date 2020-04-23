@@ -17,6 +17,8 @@ form.addEventListener('submit', e => {
         method: 'POST',
         body: formData
     }).then(response => {
-        console.log(response);
+        return response.text();
+    }).then(data => {
+        console.log(data);
     });
 });
